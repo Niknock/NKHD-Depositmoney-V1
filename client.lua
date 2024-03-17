@@ -19,6 +19,8 @@ Citizen.CreateThread(function()
                             ShowNotification(Config.NotificationInvalidAmount)
                         else
                             menu.close()
+                            local SocietyName = marker.SocietyName
+                            TriggerServerEvent('nkhd_depositmoney:checkJob', SocietyName, amount)
                             TriggerServerEvent(Config.DepositMoneyEvent, marker.SocietyName, amount)
                             ShowNotification(Config.NotificationDepositSuccess .. amount .. '$')
                         end
@@ -30,6 +32,12 @@ Citizen.CreateThread(function()
         end
     end
 end)
+
+RegisterNetEvent('nkhd_depositmoney:jobNotif')
+AddEventHandler('nkhd_depositmoney:jobNotif', function(playerName, amount)
+    ShowNotification('~g~' .. playerName .. Config.Text .. amount .. Config.Currency)
+end)
+
 
 function ShowNotification(text)
     SetNotificationTextEntry("STRING")
