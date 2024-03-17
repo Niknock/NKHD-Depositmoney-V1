@@ -1,5 +1,7 @@
 Config = {}
 
+Config.ESX = 'new' -- new or old
+
 Config.Markers = {
     {
         Coords = vector3(433.7351, -979.8600, 30.7110), -- Change to your Location
@@ -30,6 +32,8 @@ Config.Markers = {
     --},
 }
 
+Config.Currency = '$'
+Config.Text = ' has deposited '
 Config.NotificationInvalidAmount = '~r~Invalid amount' -- Change to your Language
 Config.NotificationDepositSuccess = '~g~You have Succesfully Deposited ' -- Change to your Language
 Config.DepositMoneyEvent = 'nkhd:depositMoney'
